@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Rishabh &amp; Sakshi, Wedding Invitation</title>
-<meta name="description" content="Wedding invitation of Rishabh and Sakshi, 23 to 26 November 2026, Mainpuri and Kota">
+<meta name="description" content="Wedding invitation of Rishabh and Sakshi, 25 to 26 November 2026, Kota">
 <meta name="theme-color" content="#2a0d14">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rishabh-sakshi-invitation.vercel.app/">
@@ -242,7 +242,6 @@ p,h1,h2,h3{margin:0}
 @keyframes breathe{0%,100%{scale:1}50%{scale:1.05}}
 @keyframes goldGlow{0%,100%{text-shadow:0 0 0 rgba(242,204,122,0)}50%{text-shadow:0 0 calc(var(--fw) * 0.0300) rgba(242,204,122,.8)}}
 @keyframes ringGlow{0%,100%{box-shadow:0 0 0 0 rgba(242,204,122,0)}50%{box-shadow:0 0 calc(var(--fw) * 0.0350) calc(var(--fw) * 0.0040) rgba(242,204,122,.55)}}
-@keyframes shimmer{0%,100%{opacity:0;translate:-6% -3%}50%{opacity:.75;translate:6% 4%}}
 @keyframes sparkRise{0%{opacity:0;translate:0 0;scale:.4}18%{opacity:.95}60%{opacity:.7}100%{opacity:0;translate:var(--dx) calc(var(--fw) * -1.05);scale:1.15}}
 @keyframes bounceDot{0%,100%{translate:0 0}50%{translate:0 calc(var(--fw) * -0.0140)}}
 
@@ -292,13 +291,6 @@ p,h1,h2,h3{margin:0}
 .anim .slide .bless-t{animation:floatUp 8s ease-in-out infinite}
 .anim .slide .venue{animation:floatDown 8s ease-in-out infinite}
 
-/* ---- soft moving light on every photo ---- */
-.anim .frame::after{
-  content:"";position:absolute;top:0;right:0;bottom:0;left:0;pointer-events:none;z-index:2;
-  background:radial-gradient(circle at 28% 22%,rgba(255,236,176,.5) 0%,rgba(255,236,176,0) 46%),
-             radial-gradient(circle at 76% 70%,rgba(255,210,150,.3) 0%,rgba(255,210,150,0) 42%);
-  mix-blend-mode:screen;opacity:0;animation:shimmer 9s ease-in-out infinite;
-}
 
 /* ---- rising golden sparkles (added by script) ---- */
 .spark{position:absolute;left:var(--x);bottom:-2%;width:var(--s);height:var(--s);border-radius:50%;pointer-events:none;z-index:3;opacity:0;
@@ -306,7 +298,7 @@ p,h1,h2,h3{margin:0}
   animation:sparkRise var(--d) ease-in-out var(--t) infinite}
 
 /* pause everything on slides that are off-screen (saves battery) */
-.anim .slide:not(.in) *,.anim .slide:not(.in) .frame::after{animation-play-state:paused}
+.anim .slide:not(.in) *{animation-play-state:paused}
 
 /* ---- tap feedback ---- */
 .btn:active,.map:active,.rsvp a:active,.gchips a:active{transform:scale(.96)}
@@ -314,8 +306,8 @@ p,h1,h2,h3{margin:0}
 /* ---- respect "reduce motion" ---- */
 @media (prefers-reduced-motion:reduce){
   .anim .reveal > *,.anim .slide.in .reveal > *{opacity:1;transform:none;filter:none;transition:none}
-  .anim .slide *,.anim .frame::after,.spark{animation:none!important}
-  .spark,.anim .frame::after{display:none}
+  .anim .slide *,.spark{animation:none!important}
+  .spark{display:none}
 }
 </style>
 </head>
